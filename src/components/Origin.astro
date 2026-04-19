@@ -1,0 +1,39 @@
+---
+const regions = [
+  { no: '01', region: 'Huila, Colombia', altitude: '1,720 m', varietal: 'Pink Bourbon', note: 'Stone fruit · Orange blossom · Soft acidity' },
+  { no: '02', region: 'Yirgacheffe, Ethiopia', altitude: '2,100 m', varietal: 'Heirloom', note: 'Jasmine · Bergamot · Silk-textured finish' },
+  { no: '03', region: 'Chiapas, Mexico', altitude: '1,550 m', varietal: 'Geisha', note: 'Honey · Almond · Warm caramel depth' },
+];
+---
+<section id="origin" class="relative py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-16">
+      <div class="md:col-span-5">
+        <div class="font-mono text-[11px] uppercase tracking-[0.24em] text-copper mb-4">§ Origin</div>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight">Where Every Bean<br/>Begins Its Journey.</h2>
+      </div>
+      <div class="md:col-span-6 md:col-start-7">
+        <p class="text-lg opacity-80 leading-relaxed">
+          We work with three farming cooperatives on three continents, chosen not for volume but for patience. Each lot is traceable to a single family, a single altitude, a single harvest window. Nothing is blended to hide, only to honour.
+        </p>
+      </div>
+    </div>
+    <div class="border-t border-current/10">
+      {regions.map((r) => (
+        <article class="grid md:grid-cols-12 gap-6 py-8 border-b border-current/10 group hover:bg-current/[0.02] transition">
+          <div class="md:col-span-1 font-mono text-[11px] uppercase tracking-[0.22em] text-copper pt-1">{r.no}</div>
+          <div class="md:col-span-4"><h3 class="font-display text-2xl md:text-3xl">{r.region}</h3></div>
+          <div class="md:col-span-2 font-mono text-[11px] uppercase tracking-[0.18em] opacity-70 pt-2">
+            <div class="opacity-50">Altitude</div>
+            <div>{r.altitude}</div>
+          </div>
+          <div class="md:col-span-2 font-mono text-[11px] uppercase tracking-[0.18em] opacity-70 pt-2">
+            <div class="opacity-50">Varietal</div>
+            <div>{r.varietal}</div>
+          </div>
+          <div class="md:col-span-3 text-sm opacity-80 pt-2 italic font-display">{r.note}</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

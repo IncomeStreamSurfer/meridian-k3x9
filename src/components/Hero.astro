@@ -1,0 +1,57 @@
+---
+const hour = new Date().getUTCHours();
+const mark = hour.toString().padStart(2, '0');
+---
+<section class="relative overflow-hidden grain">
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-br from-cream via-cream-soft to-[#e4d9c4]"></div>
+    <div class="absolute inset-0 opacity-[0.28] mix-blend-multiply" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center;"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-cream"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-14 md:pt-24 pb-24 md:pb-32">
+    <div class="flex items-center justify-between font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] opacity-70 mb-14 md:mb-24">
+      <span>N 40° 42′ · W 74° 00′</span>
+      <span class="hidden sm:inline">Vol. 01 · First Harvest · 2025</span>
+      <span>{mark}:00 UTC</span>
+    </div>
+    <div class="flex items-center gap-3 mb-8">
+      <span class="inline-block w-10 h-px bg-copper"></span>
+      <span class="font-mono text-[11px] uppercase tracking-[0.26em] text-copper">A Specialty Coffee Brand · Launching Soon</span>
+    </div>
+    <h1 class="font-display text-[clamp(2.6rem,7vw,6.2rem)] leading-[0.98] tracking-tight max-w-5xl">
+      Coffee Lands Soon.<br />
+      <span class="italic text-copper">Get There First.</span>
+    </h1>
+    <p class="mt-8 max-w-xl text-lg md:text-xl leading-relaxed opacity-80">
+      Meridian is a specialty coffee brand built for discerning drinkers who care where their cup comes from — sourced at origin, roasted with intent, and arriving on doorsteps before the year is out.
+    </p>
+    <p class="mt-4 max-w-xl text-base opacity-60">
+      Waitlist members receive first-roast early access, founder letters from origin, and a private code for the debut drop.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <a href="#waitlist" class="group inline-flex items-center gap-3 bg-ink text-cream px-7 py-4 rounded-full font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-copper transition">
+        Join the Waitlist
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" class="group-hover:translate-x-1 transition">
+          <path d="M4 10 h12 m-5 -5 5 5 -5 5" />
+        </svg>
+      </a>
+      <a href="/our-story" class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] border-b border-current/30 pb-1 hover:text-copper hover:border-copper transition">
+        Read Our Story
+      </a>
+    </div>
+    <div class="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 border-t border-current/10 pt-10">
+      {[
+        { k: '01', l: 'Sourced at Origin', s: 'Direct from farm' },
+        { k: '02', l: 'Roasted to Order', s: 'Shipped within 48h' },
+        { k: '03', l: 'Single Lot', s: 'Never blended down' },
+        { k: '04', l: 'Arriving 2025', s: 'Waitlist first' },
+      ].map((item) => (
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.22em] text-copper mb-2">{item.k}</div>
+          <div class="font-display text-lg">{item.l}</div>
+          <div class="text-xs opacity-60 mt-1 font-mono uppercase tracking-[0.16em]">{item.s}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

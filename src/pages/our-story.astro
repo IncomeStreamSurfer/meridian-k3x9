@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+
+const site = Astro.site?.toString() || 'https://meridian-k3x9.vercel.app';
+
+const structuredData = [
+  { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'Our Story | Meridian Specialty Coffee', url: `${site}our-story`, description: 'Meridian was built on one idea: great coffee starts long before the roast. Discover our sourcing philosophy and the story behind the brand.', mainEntity: { '@type': 'Organization', name: 'Meridian', description: 'Artisan coffee roaster sourcing single-origin lots from three continents with direct-trade relationships.', foundingDate: '2024', url: site } },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Home', item: site }, { '@type': 'ListItem', position: 2, name: 'Our Story', item: `${site}our-story` } ] },
+];
+---
+<Base title="Our Story | Meridian Specialty Coffee" description="Meridian was built on one idea: great coffee starts long before the roast. Discover our sourcing philosophy and the story behind the brand." structuredData={structuredData}>
+  <article class="relative">
+    <header class="relative border-b border-current/10 overflow-hidden">
+      <div class="absolute inset-0 -z-10 opacity-20 mix-blend-multiply" style="background-image: url('https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center;"></div>
+      <div class="max-w-5xl mx-auto px-6 lg:px-10 pt-16 md:pt-24 pb-16 md:pb-20">
+        <nav class="font-mono text-[11px] uppercase tracking-[0.22em] opacity-60 mb-8">
+          <a href="/" class="hover:text-copper transition">Home</a>
+          <span class="mx-2">/</span>
+          <span>Our Story</span>
+        </nav>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="inline-block w-10 h-px bg-copper"></span>
+          <span class="font-mono text-[11px] uppercase tracking-[0.26em] text-copper">A Founding Letter</span>
+        </div>
+        <h1 class="font-display text-[clamp(2.4rem,6vw,5rem)] leading-[1.02] tracking-tight max-w-4xl">Where Every Meridian Bean Begins.</h1>
+        <p class="mt-6 text-lg md:text-xl opacity-80 max-w-2xl leading-relaxed">Meridian is an <em class="font-display italic">artisan coffee roaster</em> built on the conviction that great coffee starts long before the roast. This is the story of why we began, who we buy from, and what we promise when you pour the first cup.</p>
+      </div>
+    </header>
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 py-16 md:py-24">
+      <section>
+        <h2 class="font-display text-3xl md:text-4xl leading-tight mb-6">The origin of an origin brand.</h2>
+        <p class="text-lg leading-[1.75] opacity-85 mb-5">Meridian began, like most good ideas, over a disappointing cup. After years working in coffee — first as a barista in Lisbon, later as a green-bean buyer for a larger roaster — our founder kept returning to the same frustration: the market rewarded volume over truth. Blends got bigger. Origin stories got shorter. The word "specialty" started to mean whatever a marketing deck needed it to mean.</p>
+        <p class="text-lg leading-[1.75] opacity-85 mb-5">We started Meridian to do the opposite. We buy small lots — sometimes a single container, sometimes a single bag — from three farming cooperatives we have visited in person and continue to visit every harvest. We pay at least double the commodity rate, sometimes triple, because a fair price is not a marketing feature. It is the minimum entry fee for calling yourself a specialty coffee brand.</p>
+      </section>
+      <div class="hairline my-14"></div>
+      <section>
+        <h2 class="font-display text-3xl md:text-4xl leading-tight mb-6">Sourced at origin, not at auction.</h2>
+        <p class="text-lg leading-[1.75] opacity-85 mb-5">Every lot in a Meridian bag is traceable to a single farm, a single altitude, and a single harvest window. Our first three partners are in <strong>Huila, Colombia</strong>, where we work with a fourteen-family cooperative producing Pink Bourbon at 1,720 metres; <strong>Yirgacheffe, Ethiopia</strong>, where heirloom varietals grow wild above 2,000 metres; and <strong>Chiapas, Mexico</strong>, where a single Geisha lot is hand-sorted twice before export.</p>
+        <p class="text-lg leading-[1.75] opacity-85 mb-5">These are not exotic names chosen to sell bags. They are the only three relationships we have built carefully enough to defend. We would rather be small and honest than large and vague.</p>
+        <blockquote class="my-10 border-l-2 border-copper pl-6 font-display italic text-2xl leading-tight text-copper">"Every good cup begins in the hands of someone you'll never meet. Our job is to make sure those hands are paid, named, and remembered."</blockquote>
+      </section>
+      <div class="hairline my-14"></div>
+      <section>
+        <h2 class="font-display text-3xl md:text-4xl leading-tight mb-6">Roasted by ear, not by algorithm.</h2>
+        <p class="text-lg leading-[1.75] opacity-85 mb-5">Our roaster is a 15-kilo Giesen drum, chosen because it gives a roaster time to listen. Each batch is roasted to a profile we develop cup by cup — first by the farmer, then by us, then by a small panel of professional tasters we trust. No two origins get the same curve. No origin gets roasted dark enough to hide behind char.</p>
+        <p class="text-lg leading-[1.75] opacity-85 mb-5">We ship within 48 hours of first crack. A bag that arrives on your doorstep on a Friday was almost certainly a green bean on Monday. Freshness is not a luxury; it is the point. Coffee is a fruit. Treat it like one.</p>
+      </section>
+      <div class="hairline my-14"></div>
+      <section>
+        <h2 class="font-display text-3xl md:text-4xl leading-tight mb-6">The Meridian Promise.</h2>
+        <ul class="space-y-4 text-lg leading-relaxed opacity-85 list-none pl-0">
+          <li class="flex gap-4"><span class="text-copper font-mono text-sm tracking-[0.22em] uppercase pt-1 min-w-[2.5rem]">01</span><span>If you can't taste the origin in the cup, we failed the farmer.</span></li>
+          <li class="flex gap-4"><span class="text-copper font-mono text-sm tracking-[0.22em] uppercase pt-1 min-w-[2.5rem]">02</span><span>If you can't see the farm on the bag, we failed ourselves.</span></li>
+          <li class="flex gap-4"><span class="text-copper font-mono text-sm tracking-[0.22em] uppercase pt-1 min-w-[2.5rem]">03</span><span>If we can't pay more than last year, we renegotiate — with our margins, not theirs.</span></li>
+          <li class="flex gap-4"><span class="text-copper font-mono text-sm tracking-[0.22em] uppercase pt-1 min-w-[2.5rem]">04</span><span>If the coffee isn't better than the cup you had yesterday, we don't ship it.</span></li>
+        </ul>
+      </section>
+      <div class="hairline my-14"></div>
+      <section>
+        <h2 class="font-display text-3xl md:text-4xl leading-tight mb-6">An invitation to the first roast.</h2>
+        <p class="text-lg leading-[1.75] opacity-85 mb-5">The first Meridian roast leaves our doors this autumn. It will be small — a few hundred bags of each origin, no more — and it will be available to waitlist members first. If any of the above resonates, we'd be honoured to have you with us from the beginning.</p>
+        <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <a href="/#waitlist" class="inline-flex items-center gap-3 bg-ink text-cream px-7 py-4 rounded-full font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-copper transition">Join the Waitlist<svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10 h12 m-5 -5 5 5 -5 5" /></svg></a>
+          <a href="/" class="font-mono text-[11px] uppercase tracking-[0.22em] border-b border-current/30 pb-1 hover:text-copper hover:border-copper transition">Back to Home</a>
+        </div>
+        <p class="mt-12 font-display italic text-xl opacity-70">— The Meridian team</p>
+      </section>
+    </div>
+  </article>
+</Base>

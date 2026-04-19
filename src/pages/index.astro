@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Origin from '../components/Origin.astro';
+import Story from '../components/Story.astro';
+import Waitlist from '../components/Waitlist.astro';
+
+const site = Astro.site?.toString() || 'https://meridian-k3x9.vercel.app';
+
+const structuredData = [
+  { '@context': 'https://schema.org', '@type': 'Organization', name: 'Meridian', url: site, logo: `${site}favicon.svg`, description: 'A specialty coffee brand built for discerning drinkers who care where their cup comes from — sourced at origin, roasted with intent, arriving soon.', sameAs: [] },
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Meridian', url: site, description: 'Coffee at the Intersection of Origin & Craft — join the waitlist for early access.' },
+  { '@context': 'https://schema.org', '@type': 'Event', name: 'Meridian Coffee Launch', description: 'The debut drop of Meridian specialty coffee — single-origin, craft-roasted, shipped to waitlist members first.', startDate: '2025-11-01', eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode', eventStatus: 'https://schema.org/EventScheduled', location: { '@type': 'VirtualLocation', url: site }, organizer: { '@type': 'Organization', name: 'Meridian', url: site } },
+];
+---
+<Base title="Meridian | Specialty Coffee, Coming Soon" description="Meridian is a specialty coffee brand launching soon. Single-origin, craft-roasted, and built for the curious cup. Join the waitlist for early access." structuredData={structuredData}>
+  <Hero />
+  <Origin />
+  <Story />
+  <Waitlist />
+</Base>

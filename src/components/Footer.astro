@@ -1,0 +1,43 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-current/10 mt-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-3 mb-4">
+        <svg width="28" height="28" viewBox="0 0 32 32" class="text-copper" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="16" cy="16" r="13" />
+          <path d="M3 16 h26 M16 3 v26" stroke-opacity="0.55" />
+          <circle cx="16" cy="16" r="4" fill="currentColor" />
+        </svg>
+        <span class="font-display text-xl">Meridian</span>
+      </div>
+      <p class="max-w-md text-sm opacity-70 leading-relaxed">
+        A specialty coffee brand for drinkers who care where their cup comes from.
+        Sourced at origin, roasted with intent, arriving soon.
+      </p>
+    </div>
+    <div>
+      <h4 class="font-mono text-[11px] uppercase tracking-[0.2em] opacity-60 mb-4">Explore</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/" class="hover:text-copper transition">Home</a></li>
+        <li><a href="/our-story" class="hover:text-copper transition">Our Story</a></li>
+        <li><a href="/#waitlist" class="hover:text-copper transition">Join Waitlist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-mono text-[11px] uppercase tracking-[0.2em] opacity-60 mb-4">Follow</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-copper transition">Instagram</a></li>
+        <li><a href="#" class="hover:text-copper transition">Substack</a></li>
+        <li><a href="mailto:hello@meridiancoffee.co" class="hover:text-copper transition">hello@meridiancoffee.co</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-current/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.18em] opacity-60">
+      <span>© {year} Meridian Coffee Co.</span>
+      <span>Sourced with intention · Roasted with patience</span>
+    </div>
+  </div>
+</footer>

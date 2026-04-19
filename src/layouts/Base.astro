@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+import SEOHead from '../components/SEOHead.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogType?: string;
+  structuredData?: object | object[];
+  theme?: 'light' | 'dark';
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  ogImage,
+  ogType,
+  structuredData,
+  theme = 'light',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en" data-theme={theme}>
+  <head>
+    <SEOHead
+      title={title}
+      description={description}
+      canonicalUrl={canonicalUrl}
+      ogImage={ogImage}
+      ogType={ogType}
+      structuredData={structuredData}
+    />
+  </head>
+  <body class={theme === 'dark' ? 'dark' : ''} data-theme={theme}>
+    <div class="min-h-screen flex flex-col">
+      <Nav />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem('meridian-theme');
+        const initial = stored || document.documentElement.dataset.theme || 'light';
+        document.documentElement.dataset.theme = initial;
+        document.body.classList.toggle('dark', initial === 'dark');
+      })();
+      document.addEventListener('click', (e) => {
+        const t = e.target.closest('[data-theme-toggle]');
+        if (!t) return;
+        const cur = document.documentElement.dataset.theme || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        document.body.classList.toggle('dark', next === 'dark');
+        localStorage.setItem('meridian-theme', next);
+      });
+    </script>
+  </body>
+</html>

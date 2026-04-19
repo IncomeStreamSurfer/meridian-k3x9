@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f5efe6;
+  --color-cream-soft: #ece4d6;
+  --color-ink: #1a1613;
+  --color-ink-soft: #2a241f;
+  --color-copper: #b87333;
+  --color-copper-deep: #8f5a24;
+  --color-stone: #7a6f62;
+  --color-stone-soft: #a89c8a;
+
+  --font-display: "Fraunces", "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html { font-family: var(--font-body); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body { background-color: var(--color-cream); color: var(--color-ink); }
+  body.dark { background-color: var(--color-ink); color: var(--color-cream); }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; }
+  ::selection { background-color: var(--color-copper); color: var(--color-cream); }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+  .font-mono { font-family: var(--font-mono); }
+  .hairline { background-image: linear-gradient(to right, transparent, currentColor, transparent); height: 1px; opacity: 0.2; }
+  .grain { position: relative; }
+  .grain::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.04; mix-blend-mode: multiply; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+}

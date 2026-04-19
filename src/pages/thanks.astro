@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+
+const site = Astro.site?.toString() || 'https://meridian-k3x9.vercel.app';
+
+const structuredData = [
+  { '@context': 'https://schema.org', '@type': 'WebPage', name: "You're In | Meridian Coffee Waitlist", url: `${site}thanks`, description: "Thanks for joining the Meridian waitlist. We'll be in touch before launch with early access, first roast news, and a few surprises." },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Home', item: site }, { '@type': 'ListItem', position: 2, name: 'Thanks', item: `${site}thanks` } ] },
+];
+---
+<Base title="You're In | Meridian Coffee Waitlist" description="Thanks for joining the Meridian waitlist. We'll be in touch before launch with early access, first roast news, and a few surprises." structuredData={structuredData}>
+  <section class="relative min-h-[80vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-cream via-cream-soft to-[#e4d9c4]"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 800 600" preserveAspectRatio="none" fill="none" stroke="#b87333" stroke-width="0.6">
+        {Array.from({ length: 14 }).map((_, i) => (
+          <ellipse cx="400" cy="300" rx={30 + i * 40} ry={15 + i * 20} stroke-opacity={0.2 - i * 0.012} />
+        ))}
+      </svg>
+    </div>
+    <div class="max-w-4xl mx-auto px-6 lg:px-10 py-24 md:py-32 text-center">
+      <div class="inline-flex items-center gap-3 mb-8">
+        <span class="inline-block w-10 h-px bg-copper"></span>
+        <span class="font-mono text-[11px] uppercase tracking-[0.26em] text-copper">Waitlist Confirmed · Seat Reserved</span>
+        <span class="inline-block w-10 h-px bg-copper"></span>
+      </div>
+      <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-copper/10 border border-copper mb-8">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#b87333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16 l5 5 l11 -12" /></svg>
+      </div>
+      <h1 class="font-display text-[clamp(2.4rem,6vw,5rem)] leading-[1.02] tracking-tight max-w-3xl mx-auto">You're on the List.<br/><span class="italic text-copper">Something good is brewing.</span></h1>
+      <p class="mt-8 text-lg md:text-xl opacity-80 max-w-2xl mx-auto leading-relaxed">Thank you for joining the <em class="font-display italic">Meridian coffee waitlist</em>. Your seat is reserved for the debut drop, and a confirmation is on its way to your inbox.</p>
+      <div class="mt-16 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto text-left">
+        {[
+          { n: '01', title: 'A confirmation email', body: 'Look for a quiet note from onboarding@resend.dev — check your spam, just in case.' },
+          { n: '02', title: 'Letters from origin', body: 'Occasional postcards from Huila, Yirgacheffe, and Chiapas as harvest progresses.' },
+          { n: '03', title: 'A private launch code', body: 'On drop day you will receive a code that isn\'t shared anywhere else — good for early access pricing.' },
+        ].map((i) => (
+          <div class="p-6 rounded-sm border border-current/10 bg-cream/60 backdrop-blur-sm">
+            <div class="font-mono text-[10px] uppercase tracking-[0.22em] text-copper mb-3">{i.n}</div>
+            <h3 class="font-display text-xl mb-2">{i.title}</h3>
+            <p class="text-sm opacity-75 leading-relaxed">{i.body}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-16 pt-10 border-t border-current/10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/our-story" class="inline-flex items-center gap-3 bg-ink text-cream px-7 py-4 rounded-full font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-copper transition">Read Our Story<svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10 h12 m-5 -5 5 5 -5 5" /></svg></a>
+        <a href="/" class="font-mono text-[11px] uppercase tracking-[0.22em] border-b border-current/30 pb-1 hover:text-copper hover:border-copper transition">Back to Home</a>
+      </div>
+      <p class="mt-16 font-display italic text-lg opacity-60">Until then, stay curious.</p>
+    </div>
+  </section>
+</Base>
